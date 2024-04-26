@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="index.do.html" method="post">
+    <ul>
+      <li><input type="text" placeholder="姓名" id="name"></li>
+      <li><input type="date" placeholder="日期" id="date"></li>
+      <li><input type="text" placeholder="时间" id="time"></li>
+      <li><input type="text" placeholder="电话" id="phone"></li>
+      <button type="submit">提交</button>
+    </ul>
+  </form>
+
+  <script>
+    document.querySelector('button').addEventListener("click", () => {
+      const name = document.querySelector('#name').value;
+      const date = document.querySelector('#date').value;
+      const time = document.querySelector('#time').value;
+      const phone = document.querySelector('#phone').value;
+      sessionStorage.setItem('obj', JSON.stringify({ name, date, time, phone }))
+    })
+  </script>
+</body>
+
+</html>
